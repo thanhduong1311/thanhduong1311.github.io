@@ -1,0 +1,12 @@
+<svg width="124" height="48" viewBox="0 0 124 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Arrows">
+<g id="arrow">
+<circle id="Ellipse 91" cx="24" cy="24" r="23.5" transform="matrix(-1 0 0 1 48 0)" stroke="#182327"/>
+<path id="Vector 171" d="M33 24H15M15 24L20 19M15 24L20 29" stroke="#182327" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="arrow_2">
+<circle id="Ellipse 91_2" cx="100" cy="24" r="23.5" stroke="#182327"/>
+<path id="Vector 171_2" d="M91 24H109M109 24L104 19M109 24L104 29" stroke="#182327" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
