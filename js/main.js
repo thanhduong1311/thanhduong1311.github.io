@@ -1,54 +1,81 @@
-const buggerMenu = document.querySelector(".mobileNav")
+(function ($) {
+    "use strict";
 
-const mobileNav = document.querySelector(".headerNav")
-
-buggerMenu.onclick = ()=> {
-    mobileNav.classList.toggle('open')
-}
-$(document).ready(function () {
-
-    $('#customerFeedback').owlCarousel({
-        loop: true,
-        nav: true,
-        dots: false,
-        navText:[
-            '<img id="nextSlideBtn" src="./images/arrow-pre.png" alt="">',
-            '<img id="preSlideBtn" src="./images/arrow-next.png" alt="">'],
-        // margin: 10,
-        responsive: {
-            0: {
-                items: 1,
-                nav: true,
-                // dots: true,
-            },
-            765: {
-                items: 1,
-                nav: true,
-                // dots: false,
+    // Spinner
+    var spinner = function () {
+        setTimeout(function () {
+            if ($('#spinner').length > 0) {
+                $('#spinner').removeClass('show');
             }
-        }
-    })
+        }, 1);
+    };
+    spinner();
+    
+    
+    // Initiate the wowjs
+    new WOW().init();
 
-    $('#videoSlider').owlCarousel({
-        loop: true,
-        nav: true,
+
+    // Sticky Navbar
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 45) {
+            $('.nav-bar').addClass('sticky-top');
+        } else {
+            $('.nav-bar').removeClass('sticky-top');
+        }
+    });
+    
+    
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
+    });
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
+
+
+    // Header carousel
+    $(".header-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1500,
+        items: 1,
         dots: true,
-        navText:[
-            '<img id="nextSlideBtn" src="./images/arrow-pre.png" alt="">',
-            '<img id="preSlideBtn" src="./images/arrow-next.png" alt="">'],
-        // margin: 10,
+        loop: true,
+        nav : true,
+        navText : [
+            '<i class="bi bi-chevron-left"></i>',
+            '<i class="bi bi-chevron-right"></i>'
+        ]
+    });
+
+
+    // Testimonials carousel
+    $(".testimonial-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1000,
+        margin: 24,
+        dots: false,
+        loop: true,
+        nav : true,
+        navText : [
+            '<i class="bi bi-arrow-left"></i>',
+            '<i class="bi bi-arrow-right"></i>'
+        ],
         responsive: {
-            0: {
-                items: 1,
-                nav: false,
-                // dots: true,
+            0:{
+                items:1
             },
-            765: {
-                items: 1,
-                nav: true,
-                // dots: false,
+            992:{
+                items:2
             }
         }
-    })
-  
-});
+    });
+    
+})(jQuery);
+
