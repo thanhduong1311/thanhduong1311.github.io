@@ -1,6 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #00B98E;
+    --primary: #f98b93;
+    --primaryMoreDark: #f9646e;
     --secondary: #FF6922;
     --light: #EFFDF5;
     --dark: #0E2E50;
@@ -194,7 +195,7 @@
 
 .header-carousel .owl-nav .owl-prev:hover,
 .header-carousel .owl-nav .owl-next:hover {
-    background: var(--dark);
+    background: var(--primaryMoreDark);
 }
 
 @media (max-width: 768px) {
@@ -242,7 +243,7 @@
 /*** Category ***/
 .cat-item div {
     background: #FFFFFF;
-    border: 1px dashed rgba(0, 185, 142, .3);
+    border: 1px dashed #f19ca2;
     transition: .5s;
 }
 
@@ -438,3 +439,4 @@
     padding-right: 0;
     border-right: none;
 }
+
